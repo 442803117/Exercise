@@ -51,7 +51,7 @@ public class MsPinYinHelper {
                 if (ChineseChar.IsValidChar(chr)) {
                     ChineseChar chineseChar = new ChineseChar(chr);
                     string t = chineseChar.Pinyins[0].ToString();
-                    retValue += t.Substring(0, 1).ToUpper();
+                    retValue += t.Substring(0, 1);
                 } else {
                     retValue += chr.ToString();
                 }
@@ -95,7 +95,7 @@ public class MsPinYinHelper {
     }
 
     /// <summary>
-    /// 取得汉字拼音字母个数
+    /// 取得汉字拼音个数
     /// </summary>
     /// <param name="chinese">汉字字符串，非汉字字符不算长度</param>
     /// <returns></returns>
@@ -114,7 +114,7 @@ public class MsPinYinHelper {
     }
 
     /// <summary>
-    /// 取得汉字拼音字母个数
+    /// 取得汉字拼音个数
     /// </summary>
     /// <param name="chr">单个汉字字符，非汉字返回0</param>
     /// <returns></returns>
