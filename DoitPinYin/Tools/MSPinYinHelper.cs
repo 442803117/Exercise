@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.International.Converters.PinYinConverter;
+using Microsoft.International.Converters.TraditionalChineseToSimplifiedConverter;
 
 namespace DoitPinYin.Tools {
 public class MsPinYinHelper {
@@ -158,8 +160,23 @@ public class MsPinYinHelper {
         }
     }
 
-    //Console.WriteLine("快乐程序设计转为繁体后是：" + ChineseConverter.Convert("快乐程序设计", ChineseConversionDirection.SimplifiedToTraditional));
-    //Console.WriteLine("快樂程序設計转为繁体后是：" + ChineseConverter.Convert("快樂程序設計", ChineseConversionDirection.TraditionalToSimplified));
+    /// <summary>
+    /// 简体转繁体
+    /// </summary>
+    /// <param name="simplified"></param>
+    /// <returns></returns>
+    public static string SimplifiedToTraditional(string simplified) {
+        return ChineseConverter.Convert(simplified, ChineseConversionDirection.SimplifiedToTraditional);
+    }
+
+    /// <summary>
+    /// 繁体转简体
+    /// </summary>
+    /// <param name="traditional"></param>
+    /// <returns></returns>
+    public static string TraditionalToSimplified(string traditional) {
+        return ChineseConverter.Convert(traditional, ChineseConversionDirection.TraditionalToSimplified);
+    }
 
 }
 }
